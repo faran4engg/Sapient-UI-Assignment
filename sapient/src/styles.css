@@ -1,51 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('../src/assets/css/bootstrap-4-min.css');
-@import url('../src/assets/css/font.css');
-/* ----------------------------------------------- */
+/* reser css for all browser */
 
-/* BASIC SETUP */
+@import url('../src/assets/css/reset.css');
+/* fonts */
 
-/* ----------------------------------------------- */
+@import url('../src/assets/fonts/font.css');
+/* blue color - >  #4acaff */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Encode Sans Semi Expanded', sans-serif;
-}
+/* Reusable */
 
+html,
 body {
-  background-color: #fff;
-  color: #0077bb !important;
-  font-weight: 300;
-  font-size: 20px;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
-
-/* ----------------------------------------------- */
-
-/* Reusable stuff */
-
-/* ----------------------------------------------- */
-
-/* Horizontal and Vertical Center */
-.h-v-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* btn-color-starts */
-.btn {
+  width: 100%;
+  height: 100%;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+  font-size: 16px;
   color: #eee;
-  background-color: #0077bb;;
 }
-/* btn-color-ends */
 
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
 
+/* buttons */
+
+.btn {
+  /* mobile first */
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.25em;
+  /* its relative to  font-size: 1.25em; which is 20px now */
+  padding: 0.5em;
+  color: #fff;
+  background-color: #4acaff;
+}
+
+.btn-brd {
+  color: #4acaff;
+  border: 1px solid #4acaff;
+  background-color: transparent;
+}
+
+/* chechbox */
 /* checkbox - starts */
 /* The container for checkbox */
 .cb-container {
@@ -113,3 +112,55 @@ body {
   transform: rotate(45deg);
 }
 /* checkbox  ends */
+
+/* margin */
+
+.mb-10 {
+  margin-bottom: 0.625em;
+}
+
+.mb-20 {
+  margin-bottom: 1.25em;
+}
+
+.mt-20 {
+  margin-top: 1.25em;
+}
+
+
+
+/*  no floats in mobile */
+
+/* media queries for desktop view */
+
+/* desktop */
+
+@media screen and (min-width:767px) {
+  /* 
+side by side class
+*/
+  .side-by-side {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .btn {
+    /* 125px */
+    min-width: 7.8125em;
+    width: auto;
+  }
+  /* floats */
+  .fl-container {
+    overflow: hidden;
+  }
+  .fl-left {
+    float: left;
+  }
+  .fl-right {
+    float: right;
+  }
+  .clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
