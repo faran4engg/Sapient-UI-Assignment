@@ -1,0 +1,123 @@
+<section class="bg">
+  <div class="container">
+    <!-- <div class="nav-wrapp"> -->
+    <div class="row">
+      <div class="col">
+        <nav>
+          <div class="row">
+            <div class="main-nav col-md-3">
+              <img src="../../assets/img/logo.png" alt="logo">
+            </div>
+            <div class="col-md-9">
+              <ul class="main-nav">
+                <li>
+                  <a href="#" class="active">Home</a>
+                </li>
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li>
+                  <a href="#">Jobs</a>
+                </li>
+                <li>
+                  <a href="#">Clients</a>
+                </li>
+                <li>
+                  <a href="#">Employers</a>
+                </li>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+
+  <div class="container h-v-center">
+    <div class="row ">
+      <div class="col-sm-12">
+        <!-- <div class="card card-block mx-auto"> -->
+        <div class="row">
+          <div class="col">
+            <h1>I'm looking for...</h1>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-8">
+            <input type="text" class="mb-3 mt-3" id="fname" name="fname" placeholder="Enter Your Job Description">
+            <div class="row job-pref">
+              <div class="col">
+                <label class="cb-container">Full Time
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="col">
+                <label class="cb-container">Part Time / Freelance
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Select Location</option>
+                    <option value="1">Pune</option>
+                    <option value="2">Mumbai</option>
+                    <option value="3">Chennai</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12 search-btn">
+            <button type="button" class="btn btn-primary mb-3 mt-3">
+              <span class="glyphicon glyphicon-print">Search</span>
+            </button>
+            <!-- <button type="button" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+              </button> -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col register-btn text-center">
+            <button (click)="openModal('custom-modal-1')" class="btn btn-primary ">Register</button>
+            {{bodyText}}
+
+          </div>
+        </div>
+
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<jw-modal id="custom-modal-1">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4>Modal header</h4>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <p>Modal Body</p>
+        <input type="text" [(ngModel)]="bodyText" class="form-control mb-3" />
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-default" (click)="closeModal('custom-modal-1');">Cancel</button>
+          <button class="btn btn-primary ">Submit</button>
+        </div>
+      </div>
+  </div>
+</jw-modal>
