@@ -2,6 +2,10 @@ nav {
   padding: .5rem 0;
 }
 
+.navbar-toggler {
+  background: deepskyblue;
+}
+
 .nav-item a {
   color: #fff;
 }
@@ -10,6 +14,7 @@ nav {
   margin-left: auto;
   margin-right: 0 !important;
 }
+
 /* Main nav - starts */
 
 /* .main-nav {

@@ -109,7 +109,7 @@ Intro Section
 *****************************************************************************************************************/
 
 .intro {
-  margin-bottom: 7%;
+  /* margin-bottom: 7%; */
   color: #000;
 }
 .intro::after {
@@ -118,7 +118,6 @@ Intro Section
   display: block;
   padding: 1px;
   height: 5px;
-  /* margin-top: -16px; */
 }
 
 .title-wrapper {
