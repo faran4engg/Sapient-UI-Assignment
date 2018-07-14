@@ -1,0 +1,14 @@
+.header-wrapper {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/bg-img.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.search-param input {
+  width: 100%;
+}
+.search-btn-wrapper{
+  text-align: right;
+}
