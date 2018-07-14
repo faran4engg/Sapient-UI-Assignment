@@ -79,7 +79,9 @@
         <!-- row for Register btn -->
         <div class="row pt-5">
           <div class="col-md-4 offset-md-4">
-            <button class="btn btn-primary btn-fill">Register</button>
+            <button class="btn btn-primary btn-fill" (click)="openModal('custom-modal-1')">Register</button>
+            {{bodyText}}
+
           </div>
         </div>
         <!-- row for Register btn - ends -->
@@ -96,6 +98,37 @@
 
 </section>
 <!-- first header section ends  -->
+
+
+
+
+
+<jw-modal id="custom-modal-1">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4>Modal header</h4>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <p>Modal Body</p>
+        <input type="text" [(ngModel)]="bodyText" class="form-control mb-3" />
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-default" (click)="closeModal('custom-modal-1');">Cancel</button>
+        <button class="btn btn-primary ">Submit</button>
+      </div>
+    </div>
+  </div>
+</jw-modal>
+
+
+
 
 <!-- Intro starts -->
 <section class="intro">

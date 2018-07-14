@@ -1,16 +1,15 @@
-// import { ModalServiceService } from './modal-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-// import { HeaderComponent } from './header/header.component';
-// import { ModalComponent } from './modal/modal.component';
-// import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { ModalService } from 'src/app/services/modal.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     ProfileComponent,
     FooterComponent,
+    ModalComponent,
 
 
   ],
@@ -26,7 +26,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
