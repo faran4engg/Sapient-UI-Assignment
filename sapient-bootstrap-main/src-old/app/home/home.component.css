@@ -140,6 +140,11 @@ Intro Section
   font-size: 1.625em;
 }
 
-.close-modal {
-  color: #fff !important;
+.search-btn {
+  background: url(../../assets/svg/search.svg) no-repeat top left;
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 2em ;
+  width: 2em;
 }

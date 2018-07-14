@@ -1,5 +1,5 @@
 <!-- first header section starts  -->
-<section class="header-wrapper">
+<section class="header-wrapper ">
   <!-- container - starts -->
   <div class="container w-100 h-100 pt-5">
 
@@ -54,7 +54,7 @@
               </div>
 
               <div class="col-md-6">
-                <select name="" id="" class="form-control fl-right">
+                <select name="locatio" id="locatio" class="form-control fl-right">
                   <option selected>Select your Location</option>
                   <option value="1">Pune</option>
                   <option value="2">Mumbai</option>
@@ -69,7 +69,10 @@
           <!-- col for search btn -->
           <div class="col-md-2 col-sm-12">
             <div class="search-btn-wrapper mb-20 side-by-side">
-              <button type="submit" class="btn btn-primary btn-fill">Search</button>
+              <button type="submit" class="btn btn-primary btn-fill">
+                  <span class="search-btn"></span><span>Search</span>              
+                
+              </button>
             </div>
           </div>
 
@@ -119,54 +122,66 @@
     <div class="row">
       <div class="col-md-12 mx-auto">
         <div class="card border-secondary">
-          <form class="form" (ngSubmit)="onSubmit(registerForm.value)" #registerForm="ngForm" nonvalidate>
-            <div class="row">
-              <div class="col-md-3">
-                <div class="card-body">
-                  <img class="img-fluid" [src]="image" alt="{{image}}" title="{{image}}">
-                </div>
-                <div class="card-body text-center">
-                  <input type="hidden" id="image" name="image" [(ngModel)]="image" class="form-control" required>
-                  <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)">
-                </div>
+
+          <div class="row">
+
+            <div class="col-md-3">
+              <div class="card-body">
+                <img class="card-img-top" src="../../assets/img/avatar.jpg" alt="Card image cap">
               </div>
-              <div class="col-md-9">
-                <div class="card-body">
+              <div class="card-body text-center">
+                <a href="#" class="card-link">Card link</a>
+              </div>
+
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <form class="form" role="form" autocomplete="off">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="firstName" name="firstName" ngModel #firstName="ngModel" placeholder="First Name"
-                          required>
+                        <!-- <label for="firstName">First Name</label> -->
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="lastName" name="lastName" ngModel #lastName="ngModel" placeholder="Last Name"
-                          required>
+                        <!-- <label for="lastName">Last Name</label> -->
+                        <input type="text" class="form-control" id="lastName" id="lastName" placeholder="Last Name">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input email class="form-control" id="email" name="email" ngModel #email="ngModel" placeholder="Email" required>
+                        <!-- <label for="email">Email</label> -->
+                        <input type="email" class="form-control" id="email" id="email" placeholder="Email" required="">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="tel" class="form-control" id="number" name="number" ngModel #number="ngModel" placeholder="Number" required>
+                        <input type="tel" class="form-control" id="tel" id="tel" placeholder="( 541 ) 754 - 3010" required="">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <select class="form-control" id="state" name="state" ngModel #state="ngModel" required>
-                          <option *ngFor="let state of states" [ngValue]="state.id">
-                            {{state.name}}
-                          </option>
+                        <label for="age">Age : </label>
+                        <input type="range" class="form-control" id="age" name="age" placeholder="password (again)" required="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <select name="state" id="state" placeholder="State" class="form-control fl-right">
+                          <option selected>Select</option>
+                          <option value="1">Pune</option>
+                          <option value="2">Mumbai</option>
+                          <option value="3">Chennai</option>
                         </select>
                       </div>
                     </div>
@@ -174,10 +189,11 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <select class="form-control" id="country" name="country" ngModel #country="ngModel" required>
-                          <option *ngFor="let country of countries" [ngValue]="country.id">
-                            {{country.name}}
-                          </option>
+                        <select name="state" id="country" placeholder="country" class="form-control fl-right">
+                          <option selected>Select</option>
+                          <option value="1">Pune</option>
+                          <option value="2">Mumbai</option>
+                          <option value="3">Chennai</option>
                         </select>
                       </div>
                     </div>
@@ -185,14 +201,24 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="address" name="address" ngModel #address="ngModel" placeholder="Address" required>
+                        <label for="inputVerify3">Verify</label>
+                        <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="tags" name="tags" ngModel #tags="ngModel" placeholder="Tags" required>
+                        <label for="inputVerify3">Verify</label>
+                        <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="inputVerify3">Verify</label>
+                        <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
                       </div>
                     </div>
                   </div>
@@ -206,20 +232,46 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <a class="btn btn-success close-modal float-right" (click)="closeModal('custom-modal-1');">Cancel</a>
+                        <button type="submit" class="btn btn-success  float-right">Cancel</button>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success  float-right">Submit</button>
+                        <button type="submit" class="btn btn-success  float-right">Submit</button>
                       </div>
                     </div>
                   </div>
-
-                </div>
+                </form>
               </div>
             </div>
-          </form>
+
+          </div>
+
+          <div class="card-body">
+            <!-- <form class="form" role="form" autocomplete="off">
+              <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="inputName" placeholder="full name">
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3">Email</label>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="email@gmail.com" required="">
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3">Password</label>
+                <input type="password" class="form-control" id="inputPassword3" placeholder="password" title="At least 6 characters with letters and numbers"
+                  required="">
+              </div>
+              <div class="form-group">
+                <label for="inputVerify3">Verify</label>
+                <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg float-right">Register</button>
+              </div>
+            </form> -->
+          </div>
+
         </div>
       </div>
     </div>
