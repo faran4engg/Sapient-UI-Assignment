@@ -1,9 +1,23 @@
+/*****************************************************************************************************************
+Header Section
+*****************************************************************************************************************/
+
 .header-wrapper {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/bg-img.jpg);
+  margin-bottom: 7%;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/img/bg.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
   background-attachment: fixed;
+}
+
+.header-wrapper::after {
+  content: '';
+  background: url(../../assets//img/ribbon.png);
+  display: block;
+  padding: 1px;
+  height: 5px;
+  /* margin-top: -16px; */
 }
 
 .search-param input {
@@ -59,7 +73,7 @@
 /* When the checkbox is checked, add a blue background */
 
 .checkbox-label input:checked~.checkmark {
-  background-color: #007bff;
+  background-color: #4acaff;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -88,4 +102,42 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/*****************************************************************************************************************
+Intro Section
+*****************************************************************************************************************/
+
+.intro {
+  margin-bottom: 7%;
+  color: #000;
+}
+.intro::after {
+  content: '';
+  background: url(../../assets//img/ribbon.png);
+  display: block;
+  padding: 1px;
+  height: 5px;
+  /* margin-top: -16px; */
+}
+
+.title-wrapper {
+  text-align: center;
+}
+
+.title-wrapper::after {
+  content: "";
+ 
+  content: "";
+  display: block;
+  width: 10em;
+  background-color: deepskyblue;
+  height: 0.5em;
+
+  margin: 2em auto;
+}
+
+.desc-wrapper p {
+  padding: 2em 2em;
+  font-size: 1.625em;
 }
