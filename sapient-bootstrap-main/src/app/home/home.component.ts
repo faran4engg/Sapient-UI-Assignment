@@ -27,10 +27,13 @@ export class HomeComponent implements OnInit {
     { id: 'Home', name: 'Home' },
     { id: 'Company', name: 'Company' }
   ];
+
+  items = ['Pizza', 'Pasta', 'Parmesan'];
   constructor(private modalService: ModalService, private router: Router) {
   }
 
   ngOnInit() {
+
   }
   openModal(id: string) {
     this.modalService.open(id);

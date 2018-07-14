@@ -1,3 +1,4 @@
+import { TagInputModule } from 'ngx-chips';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    TagInputModule,
     RouterModule.forRoot(
       appRoutes
     )

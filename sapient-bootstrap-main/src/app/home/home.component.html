@@ -213,14 +213,17 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="tags" name="tags" ngModel #tags="ngModel" placeholder="Tags" required>
+                        <!-- <input type="text" class="form-control" id="tags" name="tags" ngModel #tags="ngModel" placeholder="Tags" required> -->
+                        <tag-input [(ngModel)]='items'></tag-input>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        badges
+                        <label class="checkbox-label">
+                          <input type="checkbox" id="newsLetter" name="newsLetter">
+                          <span class="checkmark"></span> Subscribe to our News Letter</label>
                       </div>
                     </div>
                   </div>
@@ -233,7 +236,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <!-- [disabled]="!registerForm.valid" -->
-                        <button type="submit"  class="btn btn-success  float-right">Submit</button>
+                        <button type="submit" class="btn btn-success  float-right">Submit</button>
                       </div>
                     </div>
                   </div>
