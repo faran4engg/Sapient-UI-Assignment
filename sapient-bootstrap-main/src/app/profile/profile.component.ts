@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  formData;
   constructor() { }
 
   ngOnInit() {
+    this.formData = JSON.parse(localStorage.getItem('formData'));
+    console.log(this.formData);
   }
 
 }

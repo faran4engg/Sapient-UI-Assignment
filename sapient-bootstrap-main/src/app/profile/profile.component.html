@@ -3,9 +3,51 @@
   <div class="container pt-5">
     <!-- nav starts -->
     <div class="row">
-      <div class="col">
+      <div class="col ">
         <app-nav></app-nav>
       </div>
     </div>
+
+
   </div>
+</section>
+
+<section class="profile-wrapper">
+  <div class="container pt-4">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <h3 class="mb-0 my-2">Register</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card-body">
+              <img class="img-fluid" *ngIf="formData.image" [src]="formData.image" alt="{{formData.image}}" title="{{formData.image}}">
+
+            </div>
+            <div class="card-body text-center">
+              <div class="row">
+                <div class="col-md-12">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolorem possimus, necessitatibus dicta error voluptate temporibus
+              inventore ratione ipsum voluptatem quia enim unde autem nemo commodi laudantium soluta. Porro, minus.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <hr>
+  </div>
+
 </section>

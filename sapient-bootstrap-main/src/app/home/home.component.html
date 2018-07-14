@@ -80,8 +80,6 @@
         <div class="row pt-5">
           <div class="col-md-4 offset-md-4">
             <button class="btn btn-primary btn-fill" (click)="openModal('custom-modal-1')">Register</button>
-            {{bodyText}}
-
           </div>
         </div>
         <!-- row for Register btn - ends -->
@@ -119,7 +117,7 @@
     <div class="row">
       <div class="col-md-12 mx-auto">
         <div class="card border-secondary">
-          <form class="form" (ngSubmit)="onSubmit(registerForm.value)" #registerForm="ngForm" nonvalidate>
+          <form class="form" (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" autocomplete="off" nonvalidate>
             <div class="row">
               <div class="col-md-3">
                 <div class="card-body">
@@ -136,7 +134,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <input type="text" class="form-control" id="firstName" name="firstName" ngModel #firstName="ngModel" placeholder="First Name"
-                          required>
+                          pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="Alphabets not more than 20 Chars" required>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -149,7 +147,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input email class="form-control" id="email" name="email" ngModel #email="ngModel" placeholder="Email" required>
+                        <input type="email" class="form-control" id="email" name="email" ngModel #email="ngModel" placeholder="Email" required>
                       </div>
                     </div>
                   </div>
@@ -163,8 +161,25 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
+                        Age :
+
+                        <div class="slidecontainer">
+                          <label for="age"></label>
+                          <input type="range" id="age" class="form-control slider" id="age" name="age" ngModel #age="ngModel" placeholder="Age" min="1"
+                            max="100" value="50" required>
+                          <p>Value:
+                            <span id="demo"></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
                         <select class="form-control" id="state" name="state" ngModel #state="ngModel" required>
-                          <option *ngFor="let state of states" [ngValue]="state.id">
+                          <option selected>Select your State</option>
+                          <option *ngFor="let state of states; let i = index" [ngValue]="state.id" [attr.selected]="i==0 ? true : null ">
                             {{state.name}}
                           </option>
                         </select>
@@ -175,6 +190,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <select class="form-control" id="country" name="country" ngModel #country="ngModel" required>
+                          <option selected>Select your Country</option>
                           <option *ngFor="let country of countries" [ngValue]="country.id">
                             {{country.name}}
                           </option>
@@ -185,7 +201,12 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="address" name="address" ngModel #address="ngModel" placeholder="Address" required>
+                        <select class="form-control" id="address" name="address" ngModel #address="ngModel" placeholder="lol" required>
+                          <option selected>Select your Address Type</option>
+                          <option *ngFor="let addr of addrType" [ngValue]="addr.id">
+                            {{addr.name}}
+                          </option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -211,7 +232,8 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success  float-right">Submit</button>
+                        <!-- [disabled]="!registerForm.valid" -->
+                        <button type="submit"  class="btn btn-success  float-right">Submit</button>
                       </div>
                     </div>
                   </div>
@@ -226,12 +248,6 @@
 
 
     <hr>
-    <!-- <div class="row">
-      <div class="col">
-        <button class="btn btn-default" (click)="closeModal('custom-modal-1');">Cancel</button>
-        <button class="btn btn-primary ">Submit</button>
-      </div>
-    </div> -->
   </div>
 </form-modal>
 
