@@ -3,7 +3,7 @@ import { ModalService } from '../services/modal.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'jw-modal',
+  selector: 'form-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
@@ -30,7 +30,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
     // close modal on background click
     this.element.addEventListener('click', function (e: any) {
-      if (e.target.className === 'jw-modal') {
+      if (e.target.className === 'form-modal') {
         modal.close();
       }
     });
@@ -48,12 +48,12 @@ export class ModalComponent implements OnInit, OnDestroy {
   // open modal
   open(): void {
     this.element.style.display = 'block';
-    document.body.classList.add('jw-modal-open');
+    document.body.classList.add('form-modal-open');
   }
 
   // close modal
   close(): void {
     this.element.style.display = 'none';
-    document.body.classList.remove('jw-modal-open');
+    document.body.classList.remove('form-modal-open');
   }
 }
