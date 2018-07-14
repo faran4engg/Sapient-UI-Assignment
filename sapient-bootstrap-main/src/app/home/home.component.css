@@ -9,10 +9,11 @@
 .search-param input {
   width: 100%;
 }
-.search-btn-wrapper{
+
+.search-btn-wrapper {
   text-align: right;
 }
-.select-wrapper select{
+
+.select-wrapper select {
   width: 100%;
 }
-
