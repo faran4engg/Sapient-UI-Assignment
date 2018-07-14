@@ -21,30 +21,54 @@
     <!-- row that would contain search bar checkboxes and select dropdown -->
     <div class="row">
       <!-- col for  search bar checkboxes and select dropdown -->
-      <div class="col-md-8">
+      <div class="col-md-10">
         <div class="row">
           <div class="col-md-12">
             <div class="search-param">
-              <input type="text" value="">
+              <!-- <input type="text" value=""> -->
+              <div class="form-group">
+                <!-- <label for="exampleInputEmail1">Email address</label> -->
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+              </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
-            <div class="cb-wrapper">
-              <label class="cb-container fl-left">Full Time
-                <input name="full-time" id="" type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-              </label>
-              <label class="cb-container fl-left">Part Time / Freelance
-                <input name="part-time" id="" type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-              </label>
+
+
+            <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+              <div class="row cb-wrapper">
+                <div class="col-md-4">
+                  
+        <input type="checkbox" name="manager" id="manager" />
+        <label for="manager">Project Manager</label>
+
+                </div>
+                <div class="col-md-8">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+
+                      <span></span>
+                      Default checkbox
+                    </label>
+                  </div>
+
+                </div>
+
+
+
+
+              </div>
+
+
             </div>
           </div>
           <div class="col-md-6">
             <div class="select-wrapper">
-              <select name="" id="" class="fl-right">
+              <select name="" id="" class="form-control fl-right">
                 <option selected>Select Location</option>
                 <option value="1">Pune</option>
                 <option value="2">Mumbai</option>
@@ -55,9 +79,9 @@
         </div>
       </div>
       <!-- col for search btn -->
-      <div class="col-md-4 col-sm-12">
+      <div class="col-md-2 col-sm-12">
         <div class="search-btn-wrapper mb-20 side-by-side">
-          <button class="btn search-btn">Search</button>
+          <button type="submit" class="btn btn-primary search-btn">Submit</button>
         </div>
       </div>
     </div>
