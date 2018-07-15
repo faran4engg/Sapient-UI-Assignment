@@ -40,14 +40,13 @@ nav {
   transition: border-top 0.2s;
 }
 
-.main-nav li a:hover,
-.main-nav li a:active {
+.main-nav li a:hover {
   border-top: 4px solid #4acaff;
 }
-/* 
-.active {
-  border-top: 4px solid #4acaff;
-} */
+
+.active-link {
+  border-top: 4px solid #4acaff !important;
+}
 
 
 /* Main Nav - ends*/

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   image = '../../assets/img/avatar.png';
+  age = 25;
   states = [
     // { id: '0', name: 'Select State' },
     { id: 'MH', name: 'MH' },
@@ -29,7 +30,12 @@ export class HomeComponent implements OnInit {
     { id: 'Company', name: 'Company' }
   ];
 
-  tags = [{value: 'asdas', display: 'dasda'}];
+  tags = [
+    { value: 'Cricket', display: 'Cricket' },
+    { value: 'Football', display: 'Football' },
+    { value: 'Hockey', display: 'Hockey' }
+  ];
+
 
   constructor(private modalService: ModalService, private router: Router) {
   }
@@ -51,9 +57,12 @@ export class HomeComponent implements OnInit {
       this.image = reader.result;
     };
   }
-
+  selectAge(e) {
+    // console.log(e.target.value);
+    this.age = e.target.value;
+  }
   onSubmit(data) {
-    console.log(data);
+    // console.log(data);
     localStorage.setItem('formData', JSON.stringify(data.value));
 
     this.closeModal('custom-modal-1');
