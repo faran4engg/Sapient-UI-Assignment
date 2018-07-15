@@ -1,3 +1,4 @@
+import { StorageService } from './services/storage.service';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     ),
     NgxMaskModule.forRoot()
   ],
-  providers: [ModalService],
+  providers: [ModalService, StorageService],
   bootstrap: [AppComponent]
 } )
 export class AppModule { }
