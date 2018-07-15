@@ -16,8 +16,18 @@ export class ModalComponent implements OnInit, OnDestroy {
   private element: any;
   image = '../../assets/img/avatar.png';
   age = 25;
-  address = '';
-  // registerForm: FormControl;
+  address = 'Home';
+  profileData;
+  addr1: any = 'adasdad';
+  addr2: any = 'adasdad';
+  country: any = 'UK';
+  firstName: any = 'Faran';
+  lastName: any = 'Shaikh';
+  newsLetter: any = true;
+  number: any = '1234567890';
+  state: any = 'MH';
+  email: any = 'dasda@dasdas.com';
+
 
   states = [
     // { id: '0', name: 'Select State' },
@@ -42,22 +52,39 @@ export class ModalComponent implements OnInit, OnDestroy {
     { value: 'Football', display: 'Football' },
     { value: 'Hockey', display: 'Hockey' }
   ];
-  profileData;
-  addr1: any;
-  addr2: any;
-  country: any;
-  firstName: any;
-  lastName: any;
-  newsLetter: any;
-  number: any;
-  state: any;
-  email: any;
+
   // tslint:disable-next-line:max-line-length
   constructor(private modalService: ModalService, private el: ElementRef, private router: Router, private route: ActivatedRoute, private storageService: StorageService) {
     this.element = el.nativeElement;
-
-
   }
+  ngOnInit(): void {
+    const modal = this;
+
+    this.route.url.subscribe(res => {
+      const param = res[0].path;
+      if (param === 'profile') {
+        this.profileData = JSON.parse(localStorage.getItem('formData'));
+        if (this.profileData) {
+          this.updateModalValues(this.profileData);
+        }
+      }
+    });
+
+    // move element to bottom of page (just before </body>) so it can be displayed above everything else
+    document.body.appendChild(this.element);
+
+    // close modal on background click
+    this.element.addEventListener('click', function (e: any) {
+      if (e.target.className === 'form-modal') {
+        modal.close();
+      }
+    });
+
+    // add self (this modal instance) to the modal service so it's accessible from controllers
+    this.modalService.add(this);
+  }
+
+
   openModal(id: string) {
     this.modalService.open(id);
   }
@@ -65,6 +92,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   closeModal(id: string) {
     this.modalService.close(id);
   }
+
   onFileSelect(event) {
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files.item(0));
@@ -81,52 +109,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.storageService.setItem('formData', JSON.stringify(data.value));
     this.closeModal('custom-modal-1');
     this.router.navigate(['/profile']);
-  }
-
-
-
-
-  ngOnInit(): void {
-    const modal = this;
-
-    this.route.url.subscribe(res => {
-      const param = res[0].path;
-      if (param === 'profile') {
-        this.profileData = JSON.parse(localStorage.getItem('formData'));
-        if (this.profileData) {
-
-          this.updateModalValues(this.profileData);
-        }
-      }
-
-
-    });
-
-
-    // ensure id attribute exists
-    if (!this.id) {
-      console.error('modal must have an id');
-      return;
-    }
-
-    // move element to bottom of page (just before </body>) so it can be displayed above everything else
-    document.body.appendChild(this.element);
-
-    // close modal on background click
-    this.element.addEventListener('click', function (e: any) {
-      if (e.target.className === 'form-modal') {
-        modal.close();
-      }
-    });
-
-    // add self (this modal instance) to the modal service so it's accessible from controllers
-    this.modalService.add(this);
-  }
-
-  // remove self from modal service when directive is destroyed
-  ngOnDestroy(): void {
-    this.modalService.remove(this.id);
-    this.element.remove();
   }
 
   updateModalValues(profileData) {
@@ -156,4 +138,13 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.element.style.display = 'none';
     document.body.classList.remove('form-modal-open');
   }
+
+
+
+  // remove self from modal service when directive is destroyed
+  ngOnDestroy(): void {
+    this.modalService.remove(this.id);
+    this.element.remove();
+  }
+
 }

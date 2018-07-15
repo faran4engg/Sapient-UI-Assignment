@@ -23,7 +23,7 @@
                     <img class="img-fluid" [src]="image" alt="{{image}}" title="{{image}}">
                   </div>
                   <div class="card-body text-center">
-                    <input type="hidden" id="image" name="image" [(ngModel)]="image" class="form-control " required>
+                    <input type="hidden" id="image" name="image"  [(ngModel)]="image" class="form-control " required>
                     <label id="file" class="ml-4"> Upload your photo
                         <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)" size="60">
                       </label>
