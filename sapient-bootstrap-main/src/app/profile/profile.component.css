@@ -14,7 +14,11 @@
   color: deepskyblue;
 }
 
-
 input[type="file"] {
   display: none;
+}
+
+.avatar-img {
+  height: 325px;
+  width: 325px;
 }
