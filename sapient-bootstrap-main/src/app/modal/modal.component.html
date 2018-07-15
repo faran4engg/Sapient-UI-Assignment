@@ -1,6 +1,5 @@
 <div class="form-modal">
   <div class="form-modal-body">
-    <!-- <ng-content></ng-content> -->
     <div class="container">
       <div class="row">
         <div class="col-md-12 mx-auto">
@@ -20,7 +19,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-12 mx-auto">
           <div class="card ">
@@ -35,7 +33,6 @@
                     <label id="file" class="ml-4"> Upload your photo
                       <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)" size="60">
                     </label>
-                    <!-- <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)"> -->
                   </div>
                 </div>
                 <div class="col-md-9">
@@ -88,7 +85,6 @@
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                     <div class="row">
@@ -142,9 +138,7 @@
                           </div>
                         </div>
                       </div>
-
                     </div>
-
                     <div class="company-addr" *ngIf="address === 'Company'">
                       <div class="row">
                         <div class="col-md-12">
@@ -161,11 +155,9 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <!-- <input type="text" class="form-control" id="tags" name="tags" ngModel #tags="ngModel" placeholder="Tags" required> -->
                           <tag-input id="tags" name="tags" [(ngModel)]='tags' required></tag-input>
                         </div>
                       </div>
@@ -192,7 +184,6 @@
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -200,8 +191,6 @@
           </div>
         </div>
       </div>
-
-
       <hr>
     </div>
   </div>

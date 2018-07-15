@@ -32,24 +32,6 @@ export class HomeComponent implements OnInit {
   closeModal(id: string) {
     this.modalService.close(id);
   }
-  // onFileSelect(event) {
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(event.target.files.item(0));
-  //   reader.onload = () => {
-  //     this.image = reader.result;
-  //   };
-  // }
-  // selectAge(e) {
-  //   // console.log(e.target.value);
-  //   this.age = e.target.value;
-  // }
-  // onSubmit(data) {
-  //   // console.log(data);
-  //   localStorage.setItem('formData', JSON.stringify(data.value));
-
-  //   this.closeModal('custom-modal-1');
-  //   this.router.navigate(['/profile']);
-  // }
 
 
 }

@@ -17,6 +17,9 @@ export class StorageService {
   setItem(key: string, data: any) {
     localStorage.setItem(key, data);
     this.storageSub.next({ key: data });
+    console.log(this.storageSub);
+
   }
+
   constructor() { }
 }

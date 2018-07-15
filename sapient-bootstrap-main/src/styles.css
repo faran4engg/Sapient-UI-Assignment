@@ -190,8 +190,8 @@ body.form-modal-open {
   transform: rotate(45deg);
 }
 
-@media screen and (max-width: 768px){
-.pt-5{
-  padding-top: 0 !important;
-}
+@media screen and (max-width: 768px) {
+  .pt-5 {
+    padding-top: 0 !important;
+  }
 }

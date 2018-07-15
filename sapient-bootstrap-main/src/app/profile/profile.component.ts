@@ -21,13 +21,13 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    // first time get the values
     this.formData = JSON.parse(localStorage.getItem('formData'));
-    console.log(this.formData);
 
-    this.storageService.watchStorage().subscribe( _ => {
+    this.storageService.watchStorage().subscribe(_ => {
+      // get the value after keeping strict eye on localStorage data changes
       this.formData = JSON.parse(localStorage.getItem('formData'));
       console.log(this.formData);
-
     });
   }
 
@@ -35,15 +35,14 @@ export class ProfileComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files.item(0));
     reader.onload = () => {
-
       this.formData.image = reader.result;
       this.storageService.setItem('formData', JSON.stringify(this.formData));
     };
   }
+
   openModal(id: string) {
+    this.storageService.setItem('formData', JSON.stringify(this.formData));
     this.modalService.open(id);
+
   }
-
-
-
 }

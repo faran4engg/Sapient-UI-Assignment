@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-currentYear;
-  constructor() { }
-
+  currentYear;
   ngOnInit() {
+    // always showing current year -- not hardcoded 2014 :)
     this.currentYear = new Date().getFullYear();
   }
 

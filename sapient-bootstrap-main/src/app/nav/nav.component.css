@@ -17,7 +17,6 @@ nav {
 
 /* Main nav - starts */
 
-
 .main-nav li {
   display: inline-block;
   margin-left: 35px;
@@ -42,6 +41,5 @@ nav {
 .active-link {
   border-top: 4px solid #4acaff !important;
 }
-
 
 /* Main Nav - ends*/

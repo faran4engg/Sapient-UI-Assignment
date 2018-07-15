@@ -17,17 +17,31 @@ export class ModalComponent implements OnInit, OnDestroy {
   private element: any;
   image = '../../assets/img/avatar.png';
   age = 40;
-  address = 'Home';
   profileData;
-  addr1: any = 'adasdad';
-  addr2: any = 'adasdad';
-  country: any = 'UK';
-  firstName: any = 'Faran';
-  lastName: any = 'Shaikh';
-  newsLetter: any = true;
-  number: any = '1234567890';
-  state: any = 'MH';
-  email: any = 'dasda@dasdas.com';
+  address: string;
+  addr1: string;
+  addr2: string;
+  country: string;
+  firstName: string;
+  lastName: string;
+  newsLetter = false;
+  number: string;
+  state: string;
+  email: string;
+
+  // default values for skipping form fill up activity - yukk
+
+  // address = 'Home';
+
+  // addr1: any = 'adasdad';
+  // addr2: any = 'adasdad';
+  // country: any = 'UK';
+  // firstName: any = 'Faran';
+  // lastName: any = 'Shaikh';
+  // newsLetter: any = true;
+  // number: any = '1234567890';
+  // state: any = 'MH';
+  // email: any = 'dasda@dasdas.com';
 
 
   states = [
@@ -60,10 +74,15 @@ export class ModalComponent implements OnInit, OnDestroy {
 
     this.route.url.subscribe(res => {
       const param = res[0].path;
+
       if (param === 'profile') {
         this.storageService.watchStorage().subscribe((data: string) => {
 
+          console.log(data);
+
           this.profileData = JSON.parse(localStorage.getItem('formData'));
+          console.log(this.profileData);
+
           if (this.profileData) {
             this.updateModalValues(this.profileData);
           }
