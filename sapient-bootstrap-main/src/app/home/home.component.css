@@ -20,6 +20,11 @@ Header Section
   /* margin-top: -16px; */
 }
 
+.header-wrapper h1,
+.cb-wrapper label {
+  font-style: italic;
+}
+
 .search-param input {
   width: 100%;
 }
@@ -32,14 +37,13 @@ Header Section
   width: 100%;
 }
 
-
 /*****************************************************************************************************************
 Intro Section
 *****************************************************************************************************************/
 
 .intro {
   /* margin-bottom: 7%; */
-  color: #000;
+  color: #444;
 }
 
 .intro::after {
@@ -48,6 +52,10 @@ Intro Section
   display: block;
   padding: 1px;
   height: 5px;
+}
+
+.intro h2 {
+  font-style: italic;
 }
 
 .title-wrapper {
@@ -66,5 +74,5 @@ Intro Section
 
 .desc-wrapper p {
   padding: 2em 2em;
-  font-size: 1.625em;
+  font-size: 1.2em;
 }

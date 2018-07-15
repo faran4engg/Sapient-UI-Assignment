@@ -48,3 +48,10 @@
 text-decoration: none;
   
 }
+
+.details {
+  color: #444;
+}
+.fa-envelope{
+  color: deepskyblue;
+}

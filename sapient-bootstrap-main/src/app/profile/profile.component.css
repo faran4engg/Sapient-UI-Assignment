@@ -7,7 +7,7 @@
 }
 
 .profile-desc {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .profile-wrapper h3 {
@@ -19,6 +19,6 @@ input[type="file"] {
 }
 
 .avatar-img {
-  height: 325px;
-  width: 325px;
+  height: 225px;
+  width: 225px;
 }

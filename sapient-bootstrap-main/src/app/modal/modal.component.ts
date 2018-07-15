@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   @Input() id: string;
   private element: any;
   image = '../../assets/img/avatar.png';
-  age = 25;
+  age = 40;
   address = 'Home';
   profileData;
   addr1: any = 'adasdad';

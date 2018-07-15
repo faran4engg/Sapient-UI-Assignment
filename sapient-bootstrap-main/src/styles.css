@@ -17,47 +17,13 @@ body {
   padding: 0;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
   font-size: 16px;
-  color: rgb(255, 238, 238);
+  color: #ffffff
 }
 
 .btn {
   /* 125px */
   /* min-width: 7.8125em; */
   width: 100%;
-}
-
-.btn-fill {
-  background: #4acaff;
-}
-
-.btn-fill:link,
-.btn:visited {
-  background: #4acaff;
-}
-
-.btn-fill:hover,
-.btn-fill:active {
-  background: #65a5c0;
-}
-
-/* floats */
-
-.fl-container {
-  overflow: hidden;
-}
-
-.fl-left {
-  float: left !important;
-}
-
-.fl-right {
-  float: right !important;
-}
-
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 /* margins */
@@ -150,7 +116,6 @@ body.form-modal-open {
   overflow: hidden;
 }
 
-
 /* checkbox */
 
 .checkbox-label {
@@ -172,7 +137,7 @@ body.form-modal-open {
   cursor: pointer;
 }
 
-/* Create a custom checkbox */
+/* Creating a custom checkbox */
 
 .checkbox-label .checkmark {
   position: absolute;
