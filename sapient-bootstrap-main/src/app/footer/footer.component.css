@@ -16,11 +16,11 @@
   border: 2px solid deepskyblue;
   color: #fff;
 }
-.footer input, .evn-btn{
+.footer input, .envelope{
   background: transparent;
   border-color: transparent;
 }
-.evn-btn {
+.envelope {
   color: #fff;
 }
 .subscribe {
@@ -37,4 +37,14 @@
 
 .social-wrapper .col:last-child {
   text-align: right;
+}
+.social-icons span a{
+  margin-right: 1em;
+  height: 2em;
+  width: 2em;
+  
+}
+.social-icons span a:hover{
+text-decoration: none;
+  
 }
