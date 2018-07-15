@@ -4,3 +4,11 @@
 .profile-wrapper{
   color: #000;
 }
+
+.profile-desc{
+  font-size: 1.5em;
+}
+
+.profile-wrapper  h3{
+  color:deepskyblue;
+}

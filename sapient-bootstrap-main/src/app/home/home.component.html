@@ -219,7 +219,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="homeAddr1" name="homeAddr1" ngModel #homeAddr1="ngModel" placeholder="Address 1"
+                          <input type="text" class="form-control" id="addr1" name="addr1" ngModel #addr1="ngModel" placeholder="Address 1"
                             required>
                         </div>
                       </div>
@@ -227,7 +227,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="homeAddr2" name="homeAddr2" ngModel #homeAddr2="ngModel" placeholder="Address 2"
+                          <input type="text" class="form-control" id="addr2" name="addr2" ngModel #addr2="ngModel" placeholder="Address 2"
                             required>
                         </div>
                       </div>
@@ -239,7 +239,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="companyAddr1" name="companyAddr1" ngModel #companyAddr1="ngModel" placeholder="Company Address 1"
+                          <input type="text" class="form-control" id="addr1" name="addr1" ngModel #addr1="ngModel" placeholder="Company Address 1"
                             required>
                         </div>
                       </div>
@@ -247,7 +247,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" class="form-control" id="companyAddr2" name="companyAddr2" ngModel #companyAddr2="ngModel" placeholder="Company Address 2"
+                          <input type="text" class="form-control" id="addr2" name="addr2" ngModel #addr2="ngModel" placeholder="Company Address 2"
                             required>
                         </div>
                       </div>
@@ -266,7 +266,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="checkbox-label">
-                          <input type="checkbox" id="newsLetter" name="newsLetter">
+                          <input type="checkbox" id="newsLetter" name="newsLetter" ngModel #newsLetter="ngModel" [checked]="newsLetter.value" (change)="newsLetter.value = !newsLetter.value" >
                           <span class="checkmark"></span> Subscribe to our News Letter</label>
                       </div>
                     </div>
