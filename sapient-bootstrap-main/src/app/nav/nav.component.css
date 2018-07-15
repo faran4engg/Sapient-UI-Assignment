@@ -12,16 +12,11 @@ nav {
 
 .menu-items {
   margin-left: auto;
-  margin-right: 0 !important;
+  margin-right: 0;
 }
 
 /* Main nav - starts */
 
-/* .main-nav {
-  float: right;
-  list-style: none;
-  margin-top: 55px;
-} */
 
 .main-nav li {
   display: inline-block;
