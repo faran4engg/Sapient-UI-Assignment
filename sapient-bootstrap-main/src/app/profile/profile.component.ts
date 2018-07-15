@@ -1,3 +1,4 @@
+import { Meta } from '@angular/platform-browser';
 import { StorageService } from './../services/storage.service';
 import { ModalService } from './../services/modal.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,16 +11,22 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   formData;
-  constructor(private modalService: ModalService, private storageService: StorageService) { }
+  constructor(private meta: Meta, private modalService: ModalService, private storageService: StorageService) {
+    // SEO
+    this.meta.addTags([
+      { name: 'description', content: 'Best leaders in Creative Digital Recruitment' },
+      { name: 'author', content: 'twoBytes consulting' },
+      { name: 'keywords', content: 'Angular, twobytes, consulting, recruitment, leader, jobs' }
+    ]);
+  }
 
   ngOnInit() {
     this.formData = JSON.parse(localStorage.getItem('formData'));
     console.log(this.formData);
 
-    this.storageService.watchStorage().subscribe((data: string) => {
-      this.formData = JSON.parse( this.storageService.getItem('formData') ) ;
+    this.storageService.watchStorage().subscribe( _ => {
+      this.formData = JSON.parse(localStorage.getItem('formData'));
       console.log(this.formData);
-      // console.log(data);
 
     });
   }

@@ -11,18 +11,20 @@
 }
 
 .footer .input-group {
-  /* margin-top: 1em; */
-
   border: 2px solid deepskyblue;
   color: #fff;
 }
-.footer input, .envelope{
+
+.footer input,
+.envelope {
   background: transparent;
   border-color: transparent;
 }
+
 .envelope {
   color: #fff;
 }
+
 .subscribe {
   padding: 10% 0;
 }
@@ -38,20 +40,21 @@
 .social-wrapper .col:last-child {
   text-align: right;
 }
-.social-icons span a{
+
+.social-icons span a {
   margin-right: 1em;
   height: 2em;
   width: 2em;
-  
 }
-.social-icons span a:hover{
-text-decoration: none;
-  
+
+.social-icons span a:hover {
+  text-decoration: none;
 }
 
 .details {
   color: #444;
 }
-.fa-envelope{
+
+.fa-envelope {
   color: deepskyblue;
 }

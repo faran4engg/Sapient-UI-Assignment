@@ -1,8 +1,8 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ElementRef, OnDestroy, Input } from '@angular/core';
 import { ModalService } from '../services/modal.service';
-import { FormControl } from '../../../node_modules/@angular/forms';
 import { StorageService } from '../services/storage.service';
+import { FormControl } from '../../../node_modules/@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -12,6 +12,7 @@ import { StorageService } from '../services/storage.service';
 })
 export class ModalComponent implements OnInit, OnDestroy {
 
+  registerForm: FormControl;
   @Input() id: string;
   private element: any;
   image = '../../assets/img/avatar.png';
@@ -30,19 +31,16 @@ export class ModalComponent implements OnInit, OnDestroy {
 
 
   states = [
-    // { id: '0', name: 'Select State' },
     { id: 'MH', name: 'MH' },
     { id: 'DL', name: 'DL' },
     { id: 'TN', name: 'TN' }
   ];
   countries = [
-    // { id: '0', name: 'Select Country' },
     { id: 'India', name: 'India' },
     { id: 'USA', name: 'USA' },
     { id: 'UK', name: 'UK' }
   ];
   addrType = [
-    // { id: '0', name: 'Select Address Type' },
     { id: 'Home', name: 'Home' },
     { id: 'Company', name: 'Company' }
   ];
@@ -63,7 +61,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.route.url.subscribe(res => {
       const param = res[0].path;
       if (param === 'profile') {
-
         this.storageService.watchStorage().subscribe((data: string) => {
 
           this.profileData = JSON.parse(localStorage.getItem('formData'));
@@ -72,11 +69,8 @@ export class ModalComponent implements OnInit, OnDestroy {
           }
           // console.log(this.formData);
           // console.log(data);
-
-
         });
         // this.profileData = JSONs.parse(localStorage.getItem('formData'));
-
       }
     });
 
@@ -95,13 +89,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
 
-  openModal(id: string) {
-    this.modalService.open(id);
-  }
 
-  closeModal(id: string) {
-    this.modalService.close(id);
-  }
 
   onFileSelect(event) {
     const reader = new FileReader();
@@ -115,10 +103,30 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.age = e.target.value;
   }
   onSubmit(data) {
-    // console.log(data);
+    console.log(data);
     this.storageService.setItem('formData', JSON.stringify(data.value));
     this.closeModal('custom-modal-1');
     this.router.navigate(['/profile']);
+  }
+
+  // open modal
+  open(): void {
+    this.element.style.display = 'block';
+    document.body.classList.add('form-modal-open');
+  }
+
+  // close modal
+  close(): void {
+    this.element.style.display = 'none';
+    document.body.classList.remove('form-modal-open');
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
   updateModalValues(profileData) {
@@ -136,20 +144,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.email = profileData.email;
     this.tags = profileData.tags;
   }
-
-  // open modal
-  open(): void {
-    this.element.style.display = 'block';
-    document.body.classList.add('form-modal-open');
-  }
-
-  // close modal
-  close(): void {
-    this.element.style.display = 'none';
-    document.body.classList.remove('form-modal-open');
-  }
-
-
 
   // remove self from modal service when directive is destroyed
   ngOnDestroy(): void {

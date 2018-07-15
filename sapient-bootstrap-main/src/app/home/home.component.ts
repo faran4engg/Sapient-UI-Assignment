@@ -10,39 +10,19 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  // image = '../../assets/img/avatar.png';
-  // age = 25;
-  // states = [
-  //   // { id: '0', name: 'Select State' },
-  //   { id: 'MH', name: 'MH' },
-  //   { id: 'DL', name: 'DL' },
-  //   { id: 'TN', name: 'TN' }
-  // ];
-  // countries = [
-  //   // { id: '0', name: 'Select Country' },
-  //   { id: 'India', name: 'India' },
-  //   { id: 'USA', name: 'USA' },
-  //   { id: 'UK', name: 'UK' }
-  // ];
-  // addrType = [
-  //   // { id: '0', name: 'Select Address Type' },
-  //   { id: 'Home', name: 'Home' },
-  //   { id: 'Company', name: 'Company' }
-  // ];
 
-  // tags = [
-  //   { value: 'Cricket', display: 'Cricket' },
-  //   { value: 'Football', display: 'Football' },
-  //   { value: 'Hockey', display: 'Hockey' }
-  // ];
-
-
-  constructor(private modalService: ModalService, private router: Router) {
+  constructor(private meta: Meta, private modalService: ModalService, private router: Router) {
   }
 
   ngOnInit() {
 
     localStorage.clear();
+    // SEO
+    this.meta.addTags([
+      { name: 'description', content: 'Best leaders in Creative Digital Recruitment' },
+      { name: 'author', content: 'twoBytes consulting' },
+      { name: 'keywords', content: 'Angular, twobytes, consulting, recruitment, leader, jobs' }
+    ]);
 
   }
   openModal(id: string) {
