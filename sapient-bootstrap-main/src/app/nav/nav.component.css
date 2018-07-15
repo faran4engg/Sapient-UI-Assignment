@@ -44,5 +44,10 @@ nav {
 .main-nav li a:active {
   border-top: 4px solid #4acaff;
 }
+/* 
+.active {
+  border-top: 4px solid #4acaff;
+} */
+
 
 /* Main Nav - ends*/

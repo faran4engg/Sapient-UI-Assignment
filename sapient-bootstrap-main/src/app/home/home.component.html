@@ -124,7 +124,7 @@
                   <img class="img-fluid" [src]="image" alt="{{image}}" title="{{image}}">
                 </div>
                 <div class="card-body text-center">
-                  <input type="hidden" id="image" name="image" [(ngModel)]="image" class="form-control" required>
+                  <input type="hidden" id="image" name="image" [(ngModel)]="image" class="form-control " required>
                   <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)">
                 </div>
               </div>
@@ -179,7 +179,7 @@
                       <div class="form-group">
                         <select class="form-control" id="state" name="state" ngModel #state="ngModel" required>
                           <option selected>Select your State</option>
-                          <option *ngFor="let state of states; let i = index" [ngValue]="state.id" [attr.selected]="i==0 ? true : null ">
+                          <option *ngFor="let state of states;" [ngValue]="state.id">
                             {{state.name}}
                           </option>
                         </select>
@@ -201,8 +201,8 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <select class="form-control" id="address" name="address" ngModel #address="ngModel" placeholder="lol" required>
-                          <option selected>Select your Address Type</option>
+                        <select class="form-control" id="address" name="address" ngModel #address="ngModel" required>
+                          <option selected>Select your Address Type </option>
                           <option *ngFor="let addr of addrType" [ngValue]="addr.id">
                             {{addr.name}}
                           </option>
@@ -210,11 +210,51 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="home-addr" *ngIf="address.value === 'Home'">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="homeAddr1" name="homeAddr1" ngModel #homeAddr1="ngModel" placeholder="Address 1"
+                            required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="homeAddr2" name="homeAddr2" ngModel #homeAddr2="ngModel" placeholder="Address 2"
+                            required>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="company-addr" *ngIf="address.value === 'Company'">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="companyAddr1" name="companyAddr1" ngModel #companyAddr1="ngModel" placeholder="Company Address 1"
+                            required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="companyAddr2" name="companyAddr2" ngModel #companyAddr2="ngModel" placeholder="Company Address 2"
+                            required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
                         <!-- <input type="text" class="form-control" id="tags" name="tags" ngModel #tags="ngModel" placeholder="Tags" required> -->
-                        <tag-input [(ngModel)]='items'></tag-input>
+                        <tag-input id="tags" name="tags" [(ngModel)]='tags'></tag-input>
                       </div>
                     </div>
                   </div>

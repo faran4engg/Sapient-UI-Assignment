@@ -1,3 +1,4 @@
+import { Meta } from '@angular/platform-browser';
 import { ModalService } from 'src/app/services/modal.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -28,7 +29,8 @@ export class HomeComponent implements OnInit {
     { id: 'Company', name: 'Company' }
   ];
 
-  items = ['Pizza', 'Pasta', 'Parmesan'];
+  tags = [{value: 'asdas', display: 'dasda'}];
+
   constructor(private modalService: ModalService, private router: Router) {
   }
 
