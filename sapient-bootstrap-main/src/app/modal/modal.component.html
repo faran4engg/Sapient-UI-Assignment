@@ -24,7 +24,10 @@
                   </div>
                   <div class="card-body text-center">
                     <input type="hidden" id="image" name="image" [(ngModel)]="image" class="form-control " required>
-                    <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)">
+                    <label id="file" class="ml-4"> Upload your photo
+                        <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)" size="60">
+                      </label>
+                       <!-- <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)"> -->
                   </div>
                 </div>
                 <div class="col-md-9">

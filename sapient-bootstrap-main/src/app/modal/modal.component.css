@@ -1,0 +1,10 @@
+label#file {
+  background: transparent;
+  display: table;
+  color: #4acaff;
+  font-weight: 600;
+}
+
+input[type="file"] {
+  display: none;
+}
