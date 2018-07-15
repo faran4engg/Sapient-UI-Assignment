@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {NgxMaskModule} from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
 ];
 
 
-@NgModule( {
+@NgModule({
   declarations: [
     AppComponent,
     NavComponent,
@@ -43,9 +44,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [ModalService, StorageService],
   bootstrap: [AppComponent]
-} )
+})
 export class AppModule { }

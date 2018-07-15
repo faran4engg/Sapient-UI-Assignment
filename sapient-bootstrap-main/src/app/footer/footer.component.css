@@ -10,13 +10,19 @@
   height: 5px;
 }
 
-.footer input {
-  margin-top: 1em;
-  background: transparent;
+.footer .input-group {
+  /* margin-top: 1em; */
+
   border: 2px solid deepskyblue;
   color: #fff;
 }
-
+.footer input, .evn-btn{
+  background: transparent;
+  border-color: transparent;
+}
+.evn-btn {
+  color: #fff;
+}
 .subscribe {
   padding: 10% 0;
 }

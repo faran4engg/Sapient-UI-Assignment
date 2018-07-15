@@ -1,24 +1,19 @@
 .header-wrapper {
   background: #2a93bd;
 }
-.profile-wrapper{
+
+.profile-wrapper {
   color: #000;
 }
 
-.profile-desc{
+.profile-desc {
   font-size: 1.5em;
 }
 
-.profile-wrapper  h3{
-  color:deepskyblue;
+.profile-wrapper h3 {
+  color: deepskyblue;
 }
 
-label#file {
-  background: transparent;
-  display: table;
-  color: #4acaff;
-  font-weight: 600;
-}
 
 input[type="file"] {
   display: none;

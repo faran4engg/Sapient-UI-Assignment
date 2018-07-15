@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-md-12 mx-auto">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-5 col-sm-5">
             <div class="card-body">
               <img class="img-fluid" *ngIf="formData.image" [src]="formData.image" alt="{{formData.image}}" title="{{formData.image}}">
             </div>
@@ -32,8 +32,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="mb-20 ">
-                    <!-- <button type="submit" class="btn btn-danger">Edit Photo</button> -->
-                    <label id="file" class="ml-4"> Edit Photo
+                    <label id="file" class="btn btn-danger"> Edit Photo
                         <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)" size="60">
                       </label>
                   </div>
@@ -46,7 +45,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-7 col-sm-7">
             <div class="card-body profile-desc">
               <p>
                 I'm {{formData.firstName}} {{formData.lastName}} and I am above {{formData.age}} years of age.
