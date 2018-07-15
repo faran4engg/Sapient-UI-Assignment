@@ -17,12 +17,18 @@ export class StorageService {
 
   setItem(key: string, data: any) {
     localStorage.setItem(key, data);
-    this.storageSub.next({key: data});
+    this.storageSub.next({ key: data });
   }
 
   removeItem(key) {
     localStorage.removeItem(key);
     this.storageSub.next();
+  }
+
+  getItem(key) {
+    return localStorage.getItem(key);
+    // this.storageSub.next();
+
   }
 
   constructor() { }

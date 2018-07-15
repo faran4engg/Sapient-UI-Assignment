@@ -32,7 +32,10 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="mb-20 ">
-                    <button type="submit" class="btn btn-danger">Edit Photo</button>
+                    <!-- <button type="submit" class="btn btn-danger">Edit Photo</button> -->
+                    <label id="file" class="ml-4"> Edit Photo
+                        <input type="file" class="form-control" accept="image/*" (change)="onFileSelect($event)" size="60">
+                      </label>
                   </div>
                 </div>
                 <div class="col-md-6">

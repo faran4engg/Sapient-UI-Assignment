@@ -63,10 +63,20 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.route.url.subscribe(res => {
       const param = res[0].path;
       if (param === 'profile') {
-        this.profileData = JSON.parse(localStorage.getItem('formData'));
-        if (this.profileData) {
-          this.updateModalValues(this.profileData);
-        }
+
+        this.storageService.watchStorage().subscribe((data: string) => {
+
+          this.profileData = JSON.parse(localStorage.getItem('formData'));
+          if (this.profileData) {
+            this.updateModalValues(this.profileData);
+          }
+          // console.log(this.formData);
+          // console.log(data);
+
+
+        });
+        // this.profileData = JSONs.parse(localStorage.getItem('formData'));
+
       }
     });
 
