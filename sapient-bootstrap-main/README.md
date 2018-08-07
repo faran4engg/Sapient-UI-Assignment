@@ -1,6 +1,6 @@
 # Sapient
 
-Deployed app can be accessed from : https://sapient-b0d00.firebaseapp.com/home
+Deployed app can be accessed from : https://sapient-b0d00.firebaseapp.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
