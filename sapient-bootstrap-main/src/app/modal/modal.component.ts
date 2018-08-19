@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   registerForm: FormControl;
   @Input() id: string;
   private element: any;
-  image = '../../assets/img/avatar.png';
+  image: any = '../../assets/img/avatar.png';
   age = 40;
   profileData;
   address: string;

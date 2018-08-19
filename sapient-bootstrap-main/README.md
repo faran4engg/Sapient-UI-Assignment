@@ -1,4 +1,4 @@
-# Sapient
+# TwoBytes App for Sapient
 
 Deployed app can be accessed from : https://sapient-b0d00.firebaseapp.com
 
